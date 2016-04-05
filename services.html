@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en" class="no-js">
+<head>
+  <meta charset="UTF-8" />
+  <title>Particleground demo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/style.css" />
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <!-- remember, jQuery is completely optional -->
+  <script type='text/javascript' src='js/jquery-1.11.1.min.js'></script>
+</head>
+
+<body>
+
+<div id="background">
+  <div class="rack">
+    <div class= "left-col">
+      <span class="box">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </span>
+    </div>
+    <div class="right-col">
+      <span class="box">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </span>
+    </div>
+  </div>
+</div>
+
+<h1>TGLUG</h1>
+<p>Tufts GNU/Linux User Group aims to enable students to explore the world of Free and Open Source Software (FOSS) in both a professional and hobbyist capacity.</p>
+
+<p>FOSS software, in particular the Linux operating system family, is only growning in popularity. Furthermore, shifts in software development software have encourged growth in open source computing.</p>
+
+
+  <script>
+  function createRack (){
+    var elem = $('.rack');
+    for (var i = 0; i < window.innerHeight - 200; i+=60) {
+      for (var j =0; j < 3; j++){
+        $(elem.find(".circle")[j]).css({'animation-duration': Math.random()/3 + 's'},0);
+      }
+      $("#background").append(elem.clone(true));
+    }
+  }
+
+  $("#background").onload=createRack();
+
+  </script>
+</body>
+</html>
